@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath>
+#include <string> 
+
+using namespace std;
+
+int main()
+{
+	
+	int g = 0;
+	string s1, s2;
+	int L, M;
+	int N, temp;
+	cin >> N;
+	do
+	{
+		cin >> L >> M;
+		cin >> s1 >> s2;
+		temp = L - size(s1) - size(s2);
+		if (temp < 0)
+		{
+			cout << 1;
+			continue;
+		}
+		int const n = 26;
+		int step = pow(n, temp);
+		int mod = (step % M) * 2;
+		cout << mod << endl;
+		g++;
+	} 
+	while (g < N);
+}
